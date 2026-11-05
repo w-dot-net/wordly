@@ -1,4 +1,4 @@
-# Wordly — 7-команданың жобасы
+# Wordly - 7-команданың жобасы
 import pygame
 import random
 
@@ -76,7 +76,7 @@ class Game:
         if len(self.current) != 5:
             return
 
-        # алдымен жасыл әріптер — орны дұрыс
+
         colors = [0, 0, 0, 0, 0]
         used = [False, False, False, False, False]
         for i in range(5):
@@ -84,7 +84,7 @@ class Game:
                 colors[i] = 2
                 used[i] = True
 
-        # сосын сары — әріп сөзде бар, бірақ басқа орында
+
         for i in range(5):
             if colors[i] != 2:
                 for j in range(5):
@@ -114,7 +114,6 @@ class Game:
         screen.fill((15, 15, 35))
 
         if not self.over:
-            # терілген әріптер қазіргі жолдың ұяшықтарында
             for col in range(5):
                 tile = self.board.tile(self.row, col)
                 if col < len(self.current):
