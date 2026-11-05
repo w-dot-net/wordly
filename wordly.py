@@ -127,7 +127,7 @@ class Game:
 
         title = font.render("Wordly: 5 әріптік сөзді тап", True, (255, 255, 255))
         screen.blit(title, (177, 320))
-        hint = font.render(f"Әрекет {self.row + 1}/6. Enter — тексеру", True, (255, 255, 255))
+        hint = font.render(f"Әрекет {self.row + 1}/6. Enter - тексеру", True, (255, 255, 255))
         screen.blit(hint, (177, 352))
 
         if self.over:
@@ -141,7 +141,7 @@ class Game:
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Wordly — 7-команда")
+pygame.display.set_caption("Wordly - 7-команда")
 clock = pygame.time.Clock()
 font = pygame.font.Font(r"C:\Windows\Fonts\segoeui.ttf", 26)
 
