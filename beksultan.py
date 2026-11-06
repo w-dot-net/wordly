@@ -1,4 +1,4 @@
-"""Мейрамбай Бексұлтан — Tile және Board."""
+"""Мейрамбай Бексұлтан — Tile және Board кластарын жасады."""
 import pygame
 
 
@@ -12,8 +12,7 @@ class Tile:
         pygame.draw.rect(screen, self.color, self.rect)
         if self.letter != "":
             text = font.render(self.letter.upper(), True, (255, 255, 255))
-            text_rect = text.get_rect(center=self.rect.center)
-            screen.blit(text, text_rect)
+            screen.blit(text, (self.rect.x + 16, self.rect.y + 8))
 
 
 class Board:

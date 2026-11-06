@@ -1,6 +1,7 @@
-"""Тлеуберген Қыран — WordList және Game логикасы."""
+"""Тлеуберген Қыран — сөздер тізімі, ойын логикасы, нәтижелер."""
 import random
 from beksultan import Board
+from alibi import InputDisplay
 
 WORDS = ["apple", "house", "table", "tiger", "robot",
          "plant", "cloud", "smile", "train", "brick",
@@ -16,7 +17,7 @@ class WordList:
         return self.words[i]
 
 
-class Game:
+class Game(InputDisplay):
     def __init__(self):
         self.words = WordList(WORDS)
         self.secret = self.words.random_word()
@@ -27,19 +28,19 @@ class Game:
         self.won = False
 
     def submit(self):
-        if self.over or len(self.current) != 5:
+        if len(self.current) != 5 or self.over:
             return
 
         colors = [0, 0, 0, 0, 0]
         used = [False, False, False, False, False]
 
-        # Алдымен жасыл: әріп пен орны дұрыс.
+        # Жасыл — әріп те, орны да дұрыс.
         for i in range(5):
             if self.current[i] == self.secret[i]:
                 colors[i] = 2
                 used[i] = True
 
-        # Сосын сары: әріп бар, бірақ басқа орында.
+        # Сары — әріп сөзде бар, бірақ орны басқа.
         for i in range(5):
             if colors[i] != 2:
                 for j in range(5):
@@ -58,7 +59,7 @@ class Game:
             else:
                 tile.color = (120, 124, 126)
 
-        self.row += 1
+        self.row = self.row + 1
         if self.current == self.secret:
             self.over = True
             self.won = True
