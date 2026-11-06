@@ -3,4 +3,3 @@
 <h2>kyran.py from kyran</h2>
 <h2>alibi.py from alibi...</h2>
 <h2>main.py game.</h2>
-<h2>vozduxaniiiii.pptx - prezentacia</h2>
